@@ -1,8 +1,8 @@
-import options, strformat, strutils, sugar, times
+import strformat, strutils, sugar, times
 import argparse
 import base, day1, day2, day3
 
-proc getSolution(problem: string, input: string): Solution =
+proc getSolution*(problem: string, input: string = ""): Solution =
     # `problem` is a string of form `dayX`
     let path = if input.len == 0: &"inputs/{problem}.txt" else: input
     case problem
