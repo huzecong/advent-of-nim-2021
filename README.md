@@ -7,11 +7,11 @@ To run:
 $ nimble run --silent -- day1 --profile
 Solving problem day1
 Part 1 took 0.000s
-Part 1 answer: 970816
-Part 2 took 0.011s
-Part 2 answer: 96047280
+Part 1 answer: 1665
+Part 2 took 0.003s
+Part 2 answer: 1702
 ```
 Or, verify all solutions through unit tests:
 ```bash
-$ npm test
+$ nimble test
 ``` 
