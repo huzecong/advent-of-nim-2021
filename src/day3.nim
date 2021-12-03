@@ -15,7 +15,7 @@ proc getMostCommonBit(lines: seq[string], i: int): char =
         count += int(x[i] == '1')
     return if count * 2 >= lines.len: '1' else: '0'
 
-method solvePart1*(this: Day3): int =
+method solvePart1Int*(this: Day3): int =
     var rates: array['0'..'1', int] = [0, 0]
     for i in 0 ..< this.nBits:
         rates['0'] *= 2
@@ -23,7 +23,7 @@ method solvePart1*(this: Day3): int =
         rates[getMostCommonBit(this.lines, i)] += 1
     return rates['0'] * rates['1']
 
-method solvePart2*(this: Day3): int =
+method solvePart2Int*(this: Day3): int =
     proc findRating(getBit: (seq[string], int) -> char): int =
         var remaining = this.lines
         for i in 0 ..< this.nBits:

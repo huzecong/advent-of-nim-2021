@@ -11,3 +11,4 @@ bin           = @["aoc2021"]
 # Dependencies
 
 requires "nim >= 1.6.0"
+requires "argparse >= 2"

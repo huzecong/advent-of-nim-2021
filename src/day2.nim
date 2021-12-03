@@ -12,7 +12,7 @@ proc initDay2*(path: string): Day2 =
     let lines = readFile(path).strip().splitLines()
     Day2(commands: lines.map(parseLine))
 
-method solvePart1*(this: Day2): int =
+method solvePart1Int*(this: Day2): int =
     var x, y = 0
     for (direction, distance) in this.commands:
         case direction
@@ -22,7 +22,7 @@ method solvePart1*(this: Day2): int =
             else: discard
     return x * y
 
-method solvePart2*(this: Day2): int =
+method solvePart2Int*(this: Day2): int =
     var x, y, aim = 0
     for (direction, distance) in this.commands:
         case direction
