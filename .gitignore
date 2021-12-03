@@ -1,2 +1,3 @@
 # executable produced by nimble
 /aoc2021
+tests/tester
