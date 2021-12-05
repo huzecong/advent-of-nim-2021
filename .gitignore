@@ -1,3 +1,6 @@
 # executable produced by nimble
 /aoc2021
-tests/tester
+/tests/tester
+
+# sample input
+/sample.txt
