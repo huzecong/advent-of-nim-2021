@@ -17,4 +17,4 @@ task test, "Runs the test suite":
   exec "nim c -r tests/tester"
 
 task lint, "Lint all code files":
-  exec "nimpretty src/*.nim tests/*.nim"
+  exec "nimpretty src/*.nim tests/*.nim --indent:2"
