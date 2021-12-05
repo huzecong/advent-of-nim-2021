@@ -4,7 +4,7 @@ import strutils, sequtils, math
 type Day1* = ref object of Solution
   depths: seq[int]
 
-proc initDay1*(path: string): Day1 =
+proc newDay1*(path: string): Day1 =
   let lines = readFile(path).strip().splitLines()
   Day1(depths: lines.map(parseInt))
 

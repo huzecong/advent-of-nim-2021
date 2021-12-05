@@ -5,7 +5,7 @@ type Day3 = ref object of Solution
   lines: seq[string]
   nBits: int
 
-proc initDay3*(path: string): Day3 =
+proc newDay3*(path: string): Day3 =
   let lines = readFile(path).strip().splitLines()
   Day3(lines: lines, nBits: lines[0].len)
 

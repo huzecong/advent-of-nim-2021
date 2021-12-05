@@ -6,9 +6,9 @@ proc getSolution*(problem: string, input: string = ""): Solution =
   # `problem` is a string of form `dayX`
   let path = if input.len == 0: &"inputs/{problem}.txt" else: input
   case problem
-    of "day1": initDay1(path)
-    of "day2": initDay2(path)
-    of "day3": initDay3(path)
+    of "day1": newDay1(path)
+    of "day2": newDay2(path)
+    of "day3": newDay3(path)
     else: raise newException(ValueError, &"Invalid problem: {problem}")
 
 proc main(problem: string, input: string = "",

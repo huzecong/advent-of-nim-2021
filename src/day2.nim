@@ -4,7 +4,7 @@ import strutils, sequtils
 type Day2* = ref object of Solution
   commands: seq[tuple[direction: string, distance: int]]
 
-proc initDay2*(path: string): Day2 =
+proc newDay2*(path: string): Day2 =
   proc parseLine(line: string): tuple[direction: string, distance: int] =
     let parts = line.splitWhitespace
     return (parts[0], parseInt(parts[1]))
