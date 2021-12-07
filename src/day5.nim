@@ -33,6 +33,7 @@ proc newDay5*(path: string): Day5 =
       s => s.split(",").map(parseInt).toTuple(2)).toTuple(2))
   Day5(lines: lines)
 
+{.hint[XDeclaredButNotUsed]: off.}
 proc print(points: Table[Point, int]): void =
   let
     (minX, maxX) = points.keys.map(xy => xy[0]).minMax
