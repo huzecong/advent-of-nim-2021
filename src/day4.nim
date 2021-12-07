@@ -7,7 +7,7 @@ type BingoBoard[T] = object
   mark: seq[seq[bool]]
   index: Table[T, (int, int)]
 
-proc initBingoBoard[T](board: seq[seq[T]]): BingoBoard[T] =
+func initBingoBoard[T](board: seq[seq[T]]): BingoBoard[T] =
   let
     nRows = board.len
     nCols = board[0].len
@@ -25,12 +25,12 @@ proc markNumber[T](board: var BingoBoard[T], number: T): bool =
   board.mark[i][j] = true
   return true
 
-proc bingo[T](board: BingoBoard[T]): bool =
+func bingo[T](board: BingoBoard[T]): bool =
   board.mark.any(row => row.all(x => x)) or
       toSeq(0 ..< board.nCols).any(y => toSeq(0 ..< board.nRows).all(
           x => board.mark[x][y]))
 
-proc getUnmarkedSum[T](board: BingoBoard[T]): T =
+func getUnmarkedSum[T](board: BingoBoard[T]): T =
   let unmarked = collect(newSeq):
     for i, row in board.board:
       for j, x in row:

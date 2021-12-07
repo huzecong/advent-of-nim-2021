@@ -9,7 +9,7 @@ proc newDay3*(path: string): Day3 =
   let lines = readFile(path).strip().splitLines()
   Day3(lines: lines, nBits: lines[0].len)
 
-proc getMostCommonBit(lines: seq[string], i: int): char =
+func getMostCommonBit(lines: seq[string], i: int): char =
   var count = 0
   for x in lines:
     count += int(x[i] == '1')
@@ -24,7 +24,7 @@ method solvePart1Int*(this: Day3): int =
   return rates['0'] * rates['1']
 
 method solvePart2Int*(this: Day3): int =
-  proc findRating(getBit: (seq[string], int) -> char): int =
+  func findRating(getBit: (seq[string], int) -> char): int =
     var remaining = this.lines
     for i in 0 ..< this.nBits:
       let bit = getBit(remaining, i)
@@ -35,7 +35,7 @@ method solvePart2Int*(this: Day3): int =
         return parseBinInt(remaining[0])
     assert false
 
-  proc revChar(c: char): char = (if c == '0': '1' else: '0')
+  func revChar(c: char): char = (if c == '0': '1' else: '0')
 
   let oxygenRating = findRating(getMostCommonBit)
   let co2Rating = findRating((lines, i) => revChar(getMostCommonBit(lines, i)))
