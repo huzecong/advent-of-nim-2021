@@ -6,7 +6,7 @@ type
   Point = tuple[x: int, y: int]
   Line = tuple[a: Point, b: Point]
 
-proc sign(x: int): int =
+func sign(x: int): int =
   if x > 0: 1
   elif x < 0: -1
   else: 0
