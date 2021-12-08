@@ -3,7 +3,7 @@ import base
 
 type FishArray = array[0 .. 8, int]
 type Day6* = ref object of Solution
-  fishCount: FishArray  # fishCount[i] is the number of fishes with timer = i
+  fishCount: FishArray # fishCount[i] is the number of fishes with timer = i
 
 proc newDay6*(path: string): Day6 =
   let fishes = readFile(path).strip.split(",").map(parseInt)
