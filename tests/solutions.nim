@@ -25,3 +25,5 @@ suite "Verify solutions are correct":
     checkDay("day7", $353800, $98119739)
   test "Day 8":
     checkDay("day8", $261, $987553)
+  test "Day 9":
+    checkDay("day9", $506, $931200)
