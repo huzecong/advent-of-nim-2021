@@ -15,8 +15,9 @@ func inBounds[T](board: Board[T], p: Point): bool =
 
 func `+`(x: Point, y: Point): Point = (x[0] + y[0], x[1] + y[1])
 
+const directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+
 func neighbors[T](board: Board[T], p: Point): seq[Point] =
-  let directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
   directions.mapIt(it + p).filterIt(board.inBounds(it))
 
 iterator points[T](board: Board[T]): Point =
