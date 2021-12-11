@@ -1,5 +1,5 @@
-import base
 import strutils, sugar
+import base
 
 type Day3 = ref object of Solution
   lines: seq[string]

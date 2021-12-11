@@ -1,5 +1,5 @@
-import base
 import strutils, sequtils
+import base
 
 type Day2* = ref object of Solution
   commands: seq[tuple[direction: string, distance: int]]

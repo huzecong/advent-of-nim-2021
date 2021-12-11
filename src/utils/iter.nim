@@ -1,9 +1,4 @@
-import macros, tables
-
-macro toTuple*[T](s: openArray[T], length: static[int]): untyped =
-  result = newNimNode(nnkPar)
-  for i in 0 ..< length:
-    result.add nnkBracketExpr.newTree(s, newLit(i))
+import options, sugar, tables
 
 type Iterable[T] = (iterator: T)
 
@@ -24,8 +19,21 @@ func minMax*[T](xs: Iterable[T] | seq[T]): tuple[min: T, max: T] =
     maxVal = max(maxVal, x)
   return (minVal, maxVal)
 
+func filterMap*[A, B](xs: openArray[A], fn: A -> Option[B]): seq[B] =
+  collect(newSeq):
+    for x in xs:
+      let val = fn(x)
+      if val.isSome: val.get
+
+iterator count*(init: int = 0): int =
+  var x = init
+  while true:
+    yield x
+    inc x
+
 ## Required to make `tables.keys` work with functions that expect an iterator.
 func keys*[K, V](table: Table[K, V]): iterator: K =
   (iterator: K =
     for x in table.keys:
       yield x)
+

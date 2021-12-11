@@ -1,6 +1,6 @@
 import strformat, strutils, sequtils, sugar, tables
 import iterutils
-import base, utils
+import base, utils/[iter, utils]
 
 type
   Point = tuple[x: int, y: int]

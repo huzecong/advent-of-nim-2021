@@ -1,5 +1,5 @@
-import base
 import strutils, sequtils, math
+import base
 
 type Day1* = ref object of Solution
   depths: seq[int]

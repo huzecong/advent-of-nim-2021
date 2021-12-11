@@ -1,5 +1,5 @@
 import math, strutils, sequtils, sugar, tables
-import base, utils
+import base, utils/utils
 
 type Case = object
   digits: seq[set[char]]
