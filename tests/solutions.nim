@@ -42,3 +42,5 @@ suite "Verify solutions are correct":
 #    ###  #    # ## ###  #  # #    ### 
 #    #    #    #  # # #  #  # #    # # 
 #### #    ####  ### #  #  ##  #### #  #""")
+  test "Day 14":
+    checkDay("day14", $3095, $3152788426516)

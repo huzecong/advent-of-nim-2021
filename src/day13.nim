@@ -9,11 +9,11 @@ type Day13* = ref object of Solution
 proc newDay13*(path: string): Day13 =
   let blocks = readFile(path).strip.split("\n\n")
   let points = blocks[0].splitLines.mapIt(it.split(",").map(parseInt).toTuple(2))
-  
+
   func parseFold(s: string): Fold =
     let (axis, posStr) = s.split(" ")[^1].split("=").toTuple(2)
     (axis: axis, position: parseInt(posStr))
-  
+
   let folds = blocks[1].splitLines.map(parseFold)
   Day13(points: points, folds: folds)
 
