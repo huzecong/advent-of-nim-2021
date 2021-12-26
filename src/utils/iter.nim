@@ -1,4 +1,4 @@
-import options, sugar, tables
+import math, options, sugar, tables
 
 type Iterable[T] = (iterator: T)
 
@@ -37,3 +37,8 @@ func keys*[K, V](table: Table[K, V]): iterator: K =
     for x in table.keys:
       yield x)
 
+func flatten*[T](xss: seq[seq[T]]): seq[T] =
+  collect(newSeqOfCap(xss.mapIt(it.len).sum)):
+    for xs in xss:
+      for x in xs:
+        x
