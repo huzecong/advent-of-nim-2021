@@ -1,4 +1,4 @@
-import math, sequtils, strformat, strutils, sugar
+import math, sequtils, strutils, sugar
 import base, utils/[iter]
 
 type Day16* = ref object of Solution
@@ -73,6 +73,7 @@ proc parse(scanner: var Scanner): Packet[int] =
       let numSubpackets = scanner.read(11)
       for _ in 1 .. numSubpackets:
         subpackets.add(scanner.parse)
+    {.warning[HoleEnumConv]: off.}
     result = Packet[int](packetType: Operator, subpackets: subpackets,
         typeID: TypeID(typeID), version: version, length: scanner.pos - start)
 
