@@ -1,7 +1,7 @@
 import strformat, strutils, sugar, times
 import argparse
 import base, day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11,
-    day12, day13, day14, day15, day16, day17, day18
+    day12, day13, day14, day15, day16, day17, day18, day25
 
 proc getSolution*(problem: string, input: string = ""): Solution =
   # `problem` is a string of form `dayX`
@@ -25,6 +25,7 @@ proc getSolution*(problem: string, input: string = ""): Solution =
     of "day16": newDay16(path)
     of "day17": newDay17(path)
     of "day18": newDay18(path)
+    of "day25": newDay25(path)
     else: raise newException(ValueError, &"Invalid problem: {problem}")
 
 proc main(problem: string, input: string = "",

@@ -13,7 +13,7 @@ func step(board: var Board[int]): int =
   var newBoard = board.mapEach(x => x + 1)
   var flashed = initBoardLike(board, false)
   var queue: Deque[Point]
-  for p, x in newBoard:
+  for p, x in newBoard.entries:
     if x > 9:
       flashed[p] = true
       queue.addLast(p)
@@ -26,7 +26,7 @@ func step(board: var Board[int]): int =
       if newBoard[p] > 9:
         flashed[p] = true
         queue.addLast(p)
-  for p, x in flashed:
+  for p, x in flashed.entries:
     if x:
       inc result
       board[p] = 0
