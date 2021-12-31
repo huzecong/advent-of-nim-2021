@@ -104,7 +104,7 @@ func trySplit(node: var SNode): bool =
 func addNodes(left: SNode, right: SNode): SNode =
   var node = newPairNode(left.deepCopy, right.deepCopy)
   while tryExplode(node) or trySplit(node):
-      discard
+    discard
   return node
 
 method solvePart1Int*(this: Day18): int =
